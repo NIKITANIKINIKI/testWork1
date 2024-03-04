@@ -1,11 +1,7 @@
 import { requestAnimals, requestAnimalsWithError, Animal, Query } from "./api";
 import "./styles.css";
 
-import Requirements from "./Requirements";
-import AnimalList from "./AnimalList";
-import InputsBlock from "./InputsBlock";
-import SelectBlock from "./SelectBlock";
-import PaginationBlock from "./PaginationBlock";
+import ContentBlock from "./ContentBlock";
 
 import React, { useEffect } from "react";
 import debounce from "lodash.debounce";
@@ -79,48 +75,30 @@ export default function App() {
   const seacrhAnimal = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPage(1);
     setCurrentNameAnimal(e.target.value);
-    debounce_(event);
+    debounce_(e);
   };
 
   const seacrhAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPage(1);
     setCurrentAmount(e.target.value);
-    debounce__(event);
+    debounce__(e);
   };
 
   return (
     <>
-      <div
-        style={{ border: "solid 2px red", padding: "30px", marginTop: "10px" }}
-      >
-        <InputsBlock
-          seacrhAmount={seacrhAmount}
-          seacrhAnimal={seacrhAnimal}
-          currentNameAnimal={currentNameAnimal}
-          currentAmount={currentAmount}
-        />
-        <div
-          style={{
-            display: "flex",
-            gap: "5px",
-            marginTop: "10px",
-            alignItems: "center",
-          }}
-        >
-          <SelectBlock setLimit={setLimit} limit={limit} />
-          <PaginationBlock
-            handleMinus={handleMinus}
-            page={page}
-            handlePlus={handlePlus}
-          />
-        </div>
-        {isLoading ? (
-          <span>Loading...</span>
-        ) : (
-          <AnimalList animals={animals}></AnimalList>
-        )}
-        {!isLoading && !animals.length && <h3>Animals not found</h3>}
-      </div>
+      <ContentBlock
+        seacrhAnimal={seacrhAnimal}
+        seacrhAmount={seacrhAmount}
+        currentNameAnimal={currentNameAnimal}
+        currentAmount={currentAmount}
+        setLimit={setLimit}
+        limit={limit}
+        handleMinus={handleMinus}
+        page={page}
+        handlePlus={handlePlus}
+        isLoading={isLoading}
+        animals={animals}
+      />
       {/* <Requirements /> */}
     </>
   );

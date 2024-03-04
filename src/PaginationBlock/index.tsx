@@ -15,7 +15,7 @@ const PaginationBlock: React.FC<Props> = ({
   return (
     <div className={styles.root}>
       <button onClick={handleMinus}>prev</button>
-      <label>page: {page}</label>
+      <label>{page}</label>
       <button onClick={handlePlus}>next</button>
     </div>
   );

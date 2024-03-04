@@ -1,16 +1,27 @@
 import React from "react";
-import type { Animal } from "./api";
+import type { Animal } from "../api";
 import styles from "./AnimalList.module.css";
 
 const AnimalList: React.FC<{ animals: Animal[] }> = ({ animals }) => {
   return (
-    <ul className={styles.root}>
-      {animals.map((el: Animal) => (
-        <li key={el.id}>
-          {el.animal}, {el.amount}
-        </li>
-      ))}
-    </ul>
+    <>
+      <table className={styles.root}>
+        <thead>
+          <tr>
+            <th>Животное</th>
+            <th>Количество</th>
+          </tr>
+        </thead>
+        <tbody>
+        {animals.map((el: Animal) => (
+          <tr key={el.id}>
+            <td>{el.animal}</td>
+            <td> {el.amount}</td>
+          </tr>
+        ))}
+        </tbody>
+      </table>
+    </>
   );
 };
 

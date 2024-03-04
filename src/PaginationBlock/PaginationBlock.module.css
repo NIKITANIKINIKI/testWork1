@@ -3,3 +3,19 @@
   align-items: center;
   gap: 5px;
 }
+
+.root label{
+  color: rgb(17, 18, 18);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius:20px;
+}
+
+.root button{
+  outline: none;
+  transition: opacity 0.25s ease;
+}
+
+.root button:active{
+  opacity: 0.5;
+}

@@ -1,4 +1,19 @@
-.root {
-  list-style-type: none;
-  padding-left: 0;
+
+.root{
+  margin-top: 10px;
+}
+
+.root, th, td{
+  border: 2px solid rgb(204, 219, 203);
+  width: 100%;
+  border-collapse: collapse;
+  color:rgb(220, 218, 206);
+}
+
+.root td {
+  text-align: center;
+}
+
+.root tr:hover{
+  background-color: green;
 }

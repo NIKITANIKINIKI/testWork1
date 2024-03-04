@@ -1,0 +1,19 @@
+.root {
+  border: solid 1px white;
+  padding: 40px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background: linear-gradient(60deg, rgb(227, 175, 4), rgb(216, 16, 150));
+  transition: transform 0.5s ease;
+}
+
+@media(max-width: 450px){
+  .root{
+    padding:30px;
+  }
+  
+}
+
+.root:hover{
+    transform: scale(110%);
+}

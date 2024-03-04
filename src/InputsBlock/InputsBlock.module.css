@@ -2,3 +2,33 @@
   display: flex;
   gap: 5px;
 }
+
+.root input{
+  padding: 15px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid rgb(244, 223, 223);
+}
+
+.root input:focus{
+  border: 2px solid rgb(16, 191, 80);
+}
+
+
+.enter{
+  position: relative;
+}
+
+.icon{
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  opacity: 0.5;
+  top:11px;
+  right: 0;
+  transition: opacity 0.5s ease;
+}
+
+.icon:hover{
+  opacity: 1;
+}
