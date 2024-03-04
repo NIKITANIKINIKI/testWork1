@@ -6,6 +6,7 @@ import AnimalList from "../AnimalList";
 import InputsBlock from "../InputsBlock";
 import SelectBlock from "../SelectBlock";
 import PaginationBlock from "../PaginationBlock";
+import LoadingBlock from '../LoadingBlock'
 
 interface Props{
   seacrhAnimal: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -18,7 +19,11 @@ interface Props{
   page: number;
   handlePlus: () => void;
   isLoading: Boolean;
-  animals: Animal[],
+  animals: Animal[];
+  setCurrentAmount: (currentAmount:string ) => void;
+  setCurrentNameAnimal: (currentAmount: string)=> void;
+  setNameOfAnimal:(nameOfAnimal: string) => void;
+  setNameOfAmount: (nameOfAmount: string) => void;
 }
 
 const ContentBlock: React.FC<Props>=({
@@ -33,16 +38,24 @@ const ContentBlock: React.FC<Props>=({
   handlePlus,
   isLoading,
   animals,
+  setCurrentAmount,
+  setCurrentNameAnimal,
+  setNameOfAnimal,
+  setNameOfAmount
 }) =>{
     return(
         <div
         className={styles.root}
       >
         <InputsBlock
+        setCurrentAmount={setCurrentAmount}
+        setCurrentNameAnimal={setCurrentNameAnimal}
           seacrhAmount={seacrhAmount}
           seacrhAnimal={seacrhAnimal}
           currentNameAnimal={currentNameAnimal}
           currentAmount={currentAmount}
+          setNameOfAnimal={setNameOfAnimal}
+          setNameOfAmount={setNameOfAmount}
         />
         <div
           
@@ -62,11 +75,11 @@ const ContentBlock: React.FC<Props>=({
           />
         </div>
         {isLoading ? (
-          <span>Loading...</span>
+          <LoadingBlock/>
         ) : (
           <AnimalList animals={animals}></AnimalList>
         )}
-        {!isLoading && !animals.length && <h3>Animals not found</h3>}
+        {!isLoading && !animals.length && <h3 style={{color:'red'}}>Animals not found</h3>}
       </div>
     )
 }

@@ -8,7 +8,7 @@
 
   color-scheme: light dark;
   color: #213547;
-  background-color: #ffffff;
+  background-color: #7d80b9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -33,6 +33,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   padding: 0 16px;
+ 
 }
 
 h1 {

@@ -43,7 +43,7 @@ const App:React.FC =() => {
           setLoading(false);
         });
       });
-  }, [nameOfAnimal, nameOfAmount, limit, page]);
+  }, [nameOfAnimal, nameOfAmount, limit, page ]);
 
   const debounce_ = React.useCallback(
     debounce((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -98,6 +98,11 @@ const App:React.FC =() => {
         handlePlus={handlePlus}
         isLoading={isLoading}
         animals={animals}
+        setCurrentAmount={setCurrentAmount}
+        setCurrentNameAnimal={setCurrentNameAnimal}
+        setNameOfAnimal={setNameOfAnimal}
+        setNameOfAmount={setNameOfAmount}
+
       />
       {/* <Requirements /> */}
     </>
