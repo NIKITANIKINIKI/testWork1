@@ -3,6 +3,14 @@
   gap: 5px;
 }
 
+
+@media(max-width: 500px){
+  .root{
+    flex-direction: column;
+
+  }
+}
+
 .root input{
   padding: 15px 10px;
   border-radius: 5px;

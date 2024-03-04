@@ -58,14 +58,7 @@ const ContentBlock: React.FC<Props>=({
           setNameOfAmount={setNameOfAmount}
         />
         <div
-          
-          style={{
-            display: "flex",
-            justifyContent:'space-between',
-            gap: "5px",
-            marginTop: "10px",
-            alignItems: "center",
-          }}
+          className={styles.content}
         >
           <SelectBlock setLimit={setLimit} limit={limit} />
           <PaginationBlock

@@ -7,13 +7,25 @@
   transition: transform 0.5s ease;
 }
 
-@media(max-width: 450px){
-  .root{
-    padding:30px;
-  }
-  
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 10px;
+  align-items: center;
 }
 
-.root:hover{
-    transform: scale(110%);
+.root:hover {
+  transform: scale(110%);
 }
+
+@media (max-width: 500px) {
+  .root {
+    padding: 30px;
+  }
+  .content{
+    flex-direction: column;
+  }
+}
+
+

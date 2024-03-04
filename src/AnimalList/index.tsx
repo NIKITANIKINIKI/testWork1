@@ -8,8 +8,8 @@ const AnimalList: React.FC<{ animals: Animal[] }> = ({ animals }) => {
       <table className={styles.root}>
         <thead>
           <tr>
-            <th>Животное</th>
-            <th>Количество</th>
+            <th>Animal</th>
+            <th>Amount</th>
           </tr>
         </thead>
         <tbody>
