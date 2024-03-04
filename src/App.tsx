@@ -6,7 +6,7 @@ import ContentBlock from "./ContentBlock";
 import React, { useEffect } from "react";
 import debounce from "lodash.debounce";
 
-export default function App() {
+const App:React.FC =() => {
   const [animals, setAnimals] = React.useState<Animal[]>([]);
   const [isLoading, setLoading] = React.useState<boolean>(true);
   const [nameOfAnimal, setNameOfAnimal] = React.useState<string>("");
@@ -103,3 +103,5 @@ export default function App() {
     </>
   );
 }
+
+export default App
